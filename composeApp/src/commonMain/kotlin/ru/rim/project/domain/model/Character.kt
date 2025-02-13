@@ -6,6 +6,5 @@ data class Character(
     val spicies: String,
     val gender: String,
     val status: String,
-    val image: String,
-//    val origin:
+    val image: String
 )
