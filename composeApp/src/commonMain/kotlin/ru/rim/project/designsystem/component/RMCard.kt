@@ -41,7 +41,7 @@ fun RMCard(character: Character) {
                     verticalAlignment = Alignment.Bottom,
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
-                    Text(character.spices, color = Color.White)
+                    Text(character.spicies, color = Color.White)
                     Text("|", color = Color.White)
                     Text(character.gender, color = Color.White)
                     Text("|", color = Color.White)

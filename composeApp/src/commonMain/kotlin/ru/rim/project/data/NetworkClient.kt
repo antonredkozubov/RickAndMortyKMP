@@ -12,7 +12,7 @@ import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-fun getClient() = HttpClient{
+fun getNetworkClient() = HttpClient{
     install(ContentNegotiation) {
         json(Json {
             prettyPrint = true
@@ -31,5 +31,5 @@ fun getClient() = HttpClient{
     }
 }
 
-const val BASE_URL = "https://rickandmortyapi.com/api"
-const val CHARACTERS_PATH = "/character/?page=1"
+const val BASE_URL = "https://rickandmortyapi.com"
+const val CHARACTERS_PATH = "/api/character/?page=1"
