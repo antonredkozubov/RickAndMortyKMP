@@ -12,7 +12,7 @@ import ru.rim.project.di.viewModelModule
 class RickAndMortyApp: Application() {
     override fun onCreate() {
         super.onCreate()
-        startKoin{
+        startKoin {
             androidContext(this@RickAndMortyApp)
             androidLogger()
             modules(networkModule, dataSourceModule, repositoryModule, viewModelModule())

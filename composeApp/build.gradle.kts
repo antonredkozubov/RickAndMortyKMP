@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.serializable)
 }
 
 kotlin {
@@ -34,7 +35,6 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
             implementation(libs.ktor.client.okhttp)
-            implementation(libs.kamel.image)
             implementation(libs.coil.compose)
         }
         commonMain.dependencies {
@@ -49,7 +49,6 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.bundles.ktor)
-            implementation(libs.kamel.image)
             implementation(libs.coil.compose)
             implementation(libs.qdsfdhvh.image.loader)
             api(libs.moko.core)

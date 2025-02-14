@@ -1,5 +1,8 @@
 package ru.rim.project.data.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class CharacterDTO (
     val created: String,
     val episode: List<String>,

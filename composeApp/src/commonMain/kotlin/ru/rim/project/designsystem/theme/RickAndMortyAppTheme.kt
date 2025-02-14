@@ -8,10 +8,12 @@ import androidx.compose.runtime.Composable
 
 
 val appDarkColors = darkColors(
-    onBackground = AppColors.Background
+    background = AppColors.Background,
+    onPrimary = AppColors.Primary
 )
 val appLightColors = lightColors(
-    onBackground = AppColors.Background
+    background = AppColors.Background,
+    onPrimary = AppColors.Primary
 )
 @Composable
 fun RickAndMortyAppTheme(
