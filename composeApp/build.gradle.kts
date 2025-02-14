@@ -52,6 +52,8 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.qdsfdhvh.image.loader)
             api(libs.moko.core)
+            implementation("app.cash.paging:paging-compose-common:3.3.0-alpha02-0.4.0")
+            implementation("app.cash.paging:paging-common:3.3.0-alpha02-0.4.0")
         }
 
         iosMain.dependencies {
