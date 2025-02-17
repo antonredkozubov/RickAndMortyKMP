@@ -8,11 +8,6 @@ import ru.rim.project.data.NetworkCharactersDataSource
 import ru.rim.project.data.requests.CharacterPagingSource
 import ru.rim.project.domain.model.Character
 
-
-//interface CharactersRepository {
-//    suspend fun getCharacters(): BaseResult<List<Character>>
-//}
-
 class CharacterRepository(
     private val api: NetworkCharactersDataSource
 ) {

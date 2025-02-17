@@ -17,6 +17,7 @@ fun getNetworkClient() = HttpClient{
         json(Json {
             prettyPrint = true
             isLenient = true
+            ignoreUnknownKeys = true
         })
     }
 

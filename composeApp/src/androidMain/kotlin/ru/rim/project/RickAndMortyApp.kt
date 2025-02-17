@@ -4,6 +4,9 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import ru.rim.project.di.dataSourceModule
+import ru.rim.project.di.networkModule
+import ru.rim.project.di.repositoryModule
 import ru.rim.project.di.viewModelModule
 
 class RickAndMortyApp: Application() {
@@ -13,8 +16,7 @@ class RickAndMortyApp: Application() {
         startKoin {
             androidContext(this@RickAndMortyApp)
             androidLogger()
-            modules(viewModelModule())
-//            modules(networkModule, dataSourceModule, repositoryModule, viewModelModule())
+            modules(networkModule, dataSourceModule, repositoryModule, viewModelModule())
         }
     }
 }
