@@ -18,7 +18,10 @@ koin = "4.0.2"
 ktor = "3.0.3"
 moko = "0.16.1"
 coil = "3.1.0"
+pagingCommon = "0.6.0"
 qdsfdhvh-image-loader = "1.10.0"
+pagingCommonAndroid = "3.3.6"
+paging = "3.3.5"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -55,9 +58,13 @@ ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "k
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
 moko-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko" }
+paging-common = "app.cash.paging:paging-common:3.3.0-alpha02-0.5.1"
+paging-compose = "app.cash.paging:paging-compose-common:3.3.0-alpha02-0.5.1"
+paging-runtime = "androidx.paging:paging-runtime:3.3.6"
 qdsfdhvh-image-loader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "qdsfdhvh-image-loader"}
 
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil"}
+androidx-paging-common-android = { group = "androidx.paging", name = "paging-common-android", version.ref = "pagingCommonAndroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

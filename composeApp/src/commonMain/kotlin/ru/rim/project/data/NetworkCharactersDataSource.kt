@@ -6,6 +6,11 @@ import io.ktor.client.request.get
 import ru.rim.project.data.model.CharactersResponse
 
 class NetworkCharactersDataSource(private val client: HttpClient) {
-    suspend fun getCharacters(): CharactersResponse =
-        client.get(CHARACTERS_PATH).body()
+    suspend fun getCharacters(page: Int): CharactersResponse {
+        return client.get("https://rickandmortyapi.com/api/character") {
+            url {
+                parameters.append("page", page.toString())
+            }
+        }.body()
+    }
 }
