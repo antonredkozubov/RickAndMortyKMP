@@ -21,6 +21,8 @@ coil = "3.1.0"
 pagingCommon = "0.6.0"
 qdsfdhvh-image-loader = "1.10.0"
 pagingCommonAndroid = "3.3.6"
+decompose = "3.2.2"
+extensionsComposeJetbrains = "2.1.4-compose-experimental"
 paging = "3.3.5"
 
 [libraries]
@@ -65,6 +67,9 @@ qdsfdhvh-image-loader = { module = "io.github.qdsfdhvh:image-loader", version.re
 
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil"}
 androidx-paging-common-android = { group = "androidx.paging", name = "paging-common-android", version.ref = "pagingCommonAndroid" }
+
+decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-jetbrains = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "extensionsComposeJetbrains" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

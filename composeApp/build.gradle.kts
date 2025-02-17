@@ -36,6 +36,7 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.coil.compose)
+            implementation(libs.decompose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -55,6 +56,8 @@ kotlin {
             implementation(libs.paging.common)
             implementation(libs.paging.runtime)
             implementation(libs.paging.compose)
+            implementation(libs.decompose)
+            implementation(libs.decompose.jetbrains)
         }
 
         iosMain.dependencies {
