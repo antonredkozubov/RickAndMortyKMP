@@ -12,6 +12,7 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,14 +20,20 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import app.cash.paging.compose.LazyPagingItems
 import app.cash.paging.compose.collectAsLazyPagingItems
+import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import org.koin.compose.koinInject
 import ru.rim.project.designsystem.component.RMCard
 import ru.rim.project.domain.model.Character
+import ru.rim.project.navigation.HomeComponent
+import ru.rim.project.navigation.HomeEvent
 
 @Composable
-fun CharactersView(viewModel: CharactersViewModel = koinInject()) {
+fun CharactersView(
+    viewModel: CharactersViewModel = koinInject(),
+    component: HomeComponent
+) {
     val characters: LazyPagingItems<Character> = viewModel.charactersPagingFlow.collectAsLazyPagingItems()
-
+    val model by component.model.subscribeAsState()
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -50,7 +57,9 @@ fun CharactersView(viewModel: CharactersViewModel = koinInject()) {
                 ) {
                     items(characters.itemCount) { index ->
                         val character = characters[index]
-                        character?.let { RMCard(it) }
+                        character?.let { RMCard(it, onClick = {
+                            component.onEvent(HomeEvent.GoToDetails(it))
+                        }) }
                     }
 
                     when (characters.loadState.append) {

@@ -1,6 +1,7 @@
 package ru.rim.project.designsystem.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,9 +24,9 @@ import ru.rim.project.domain.model.Character
 
 
 @Composable
-fun RMCard(character: Character) {
+fun RMCard(character: Character, onClick: () -> Unit) {
         Card(shape = RoundedCornerShape(10.dp),
-            modifier = Modifier.fillMaxWidth().height(221.dp),
+            modifier = Modifier.fillMaxWidth().height(221.dp).clickable { onClick() },
             backgroundColor = Color.Black
         ) {
             Box {

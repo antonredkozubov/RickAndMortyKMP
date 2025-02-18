@@ -17,12 +17,10 @@ import androidx.compose.ui.unit.dp
 import com.seiko.imageloader.ui.AutoSizeImage
 import ru.rim.project.designsystem.theme.AppColors
 import ru.rim.project.domain.model.Character
+import ru.rim.project.navigation.DetailsComponent
 
 @Composable
-fun DetailsScreen(model: Character) {
-
-    var characterModel = model
-
+fun DetailsScreen(model: Character, component: DetailsComponent) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -30,22 +28,22 @@ fun DetailsScreen(model: Character) {
     ) {
         Box {
             AutoSizeImage(
-                characterModel.image,
+                model.image,
                 contentDescription = "image",
             )
         }
         Column(modifier = Modifier.background(AppColors.transparentBlack).padding(15.dp)) {
-            Text(characterModel.name, color = Color.White)
-            Text(characterModel.originName, color = Color.White)
+            Text(model.name, color = Color.White)
+            Text(model.originName, color = Color.White)
             Row(modifier = Modifier.fillMaxSize(),
                 verticalAlignment = Alignment.Bottom,
                 horizontalArrangement = Arrangement.SpaceAround
             ) {
-                Text(characterModel.spicies, color = Color.White)
+                Text(model.spicies, color = Color.White)
                 Text("|", color = Color.White)
-                Text(characterModel.gender, color = Color.White)
+                Text(model.gender, color = Color.White)
                 Text("|", color = Color.White)
-                Text(characterModel.status, color = Color.White)
+                Text(model.status, color = Color.White)
             }
         }
     }

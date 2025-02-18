@@ -17,7 +17,7 @@ class RootComponent(
     val childStack = childStack(
         source = navigation,
         serializer = Configuration.serializer(),
-        initialConfiguration = Configuration.ScreenA,
+        initialConfiguration = Configuration.Home,
         handleBackButton = true,
         childFactory = ::createChild
     )
@@ -31,14 +31,14 @@ class RootComponent(
             Configuration.Home -> Child.Home(
                 HomeComponent(
                     componentContext = context,
-                    onNavigateToScreenB = { model ->
+                    onNavigateToDetails = { model ->
                         navigation.pushNew(Configuration.Details(model))
                     }
                 )
             )
             is Configuration.Details -> Child.Details(
                 DetailsComponent(
-                    text = config.text,
+                    model = config.model,
                     componentContext = context,
                     onGoBack = {
                         navigation.pop()
