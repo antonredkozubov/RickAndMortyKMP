@@ -21,6 +21,7 @@ class HomeComponent(
         when (event) {
             is HomeEvent.GoToDetails -> {
                 _model.value = event.model
+                onNavigateToDetails(_model.value)
             }
         }
     }

@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import app.cash.paging.compose.LazyPagingItems
 import app.cash.paging.compose.collectAsLazyPagingItems
-import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
+import com.arkivanov.decompose.extensions.compose.subscribeAsState
 import org.koin.compose.koinInject
 import ru.rim.project.designsystem.component.RMCard
 import ru.rim.project.domain.model.Character
@@ -57,7 +57,8 @@ fun CharactersView(
                 ) {
                     items(characters.itemCount) { index ->
                         val character = characters[index]
-                        character?.let { RMCard(it, onClick = {
+                        character?.let { RMCard(it,
+                            onClick = {
                             component.onEvent(HomeEvent.GoToDetails(it))
                         }) }
                     }
