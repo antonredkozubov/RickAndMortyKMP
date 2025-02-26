@@ -1,13 +1,13 @@
 package ru.rim.project.navigation
 
 import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.router.stack.pop
 import com.arkivanov.decompose.router.stack.pushNew
 import kotlinx.serialization.Serializable
 import ru.rim.project.domain.model.Character
+import ru.rim.project.feature.details.DetailsComponent
 
 
 class RootComponent(
@@ -22,7 +22,6 @@ class RootComponent(
         childFactory = ::createChild
     )
 
-    @OptIn(ExperimentalDecomposeApi::class)
     private fun createChild(
         config: Configuration,
         context: ComponentContext

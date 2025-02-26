@@ -12,8 +12,6 @@ class HomeComponent(
     private val onNavigateToDetails: (Character) -> Unit
 ) : ComponentContext by componentContext, KoinComponent {
 
-//    val viewModel: CharactersViewModel by koinInject()
-
     private val _model = MutableValue(Character("", "", "", "", "", ""))
     val model: Value<Character> = _model
 

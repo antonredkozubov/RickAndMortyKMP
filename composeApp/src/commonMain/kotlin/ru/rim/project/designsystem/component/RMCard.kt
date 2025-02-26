@@ -33,6 +33,8 @@ fun RMCard(character: Character, onClick: () -> Unit) {
                 AutoSizeImage(
                     character.image,
                     contentDescription = "image",
+                    modifier = Modifier
+                        .fillMaxWidth()
                 )
             }
             Column(modifier = Modifier.background(AppColors.transparentBlack).padding(15.dp)) {

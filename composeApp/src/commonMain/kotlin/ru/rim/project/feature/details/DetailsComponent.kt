@@ -1,4 +1,4 @@
-package ru.rim.project.navigation
+package ru.rim.project.feature.details
 
 import com.arkivanov.decompose.ComponentContext
 import ru.rim.project.domain.model.Character
